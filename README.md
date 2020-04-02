@@ -170,3 +170,68 @@ func main() {
 	fmt.Println(Sqrt(16))
 }
 ```
+
+
+
+
+# Newton's Method for calculating Square Roots With Error Flag for negative values
+```
+package main
+
+import (
+	"fmt"
+)
+type ErrNegativeSqrt float64
+
+func (e ErrNegativeSqrt) Error() string  {
+  if (e < 0) {
+    return fmt.Sprintf("Root operation on a negative number")
+  } else {
+    return ""
+  }
+}
+
+func Sqrt(x float64) (float64, error) {
+  z:=1.0
+  for i:=1; i<10; i++ {
+    z-= (z*z - x) / (2*z)
+	fmt.Println(z)
+  }
+  return z, ErrNegativeSqrt(x)
+}
+
+func main() {
+	fmt.Println(Sqrt(2))
+	fmt.Println(Sqrt(-2))
+}
+
+
+
+# Fibonacci 
+```
+package main
+
+import "fmt"
+
+// fibonacci is a function that returns
+// a function that returns an int. 
+// Memoizing would be cool
+func fibonacci() func(x int) int {
+	return func(x int) int {
+	    if x == 0 {
+		    return 0
+	    } else if x == 1 {
+		    return 1
+	    } else {
+		    return fibonacci()(x-1) + fibonacci()(x-2)
+		}
+	}
+}
+
+func main() {
+	f := fibonacci()
+	for i := 0; i < 10; i++ {
+		fmt.Println(f(i))
+	}
+}
+```
