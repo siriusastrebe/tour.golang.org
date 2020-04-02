@@ -1,4 +1,5 @@
-package main
+# Equivalent Binary Trees
+```package main
 
 import ("golang.org/x/tour/tree"
         "fmt")
@@ -77,13 +78,13 @@ func main() {
 	fmt.Println("end")
 }
 
+```
 
 
 
 
-
-
-
+# Formatting IP Address Strings
+```
 package main
 
 import "fmt"
@@ -105,6 +106,7 @@ func main() {
 		fmt.Printf("%v: %v\n", name, ip)
 	}
 }
+```
 
 
 
@@ -114,8 +116,8 @@ func main() {
 
 
 
-
-
+# Word Count
+```
 package main
 
 import (
@@ -140,15 +142,15 @@ func WordCount(s string) map[string]int {
 func main() {
 	wc.Test(WordCount)
 }
+```
 
 
 
 
 
 
-
-
-
+# Newton's Method for calculating Square Roots
+```
 package main
 
 import (
@@ -167,6 +169,4 @@ func Sqrt(x float64) float64 {
 func main() {
 	fmt.Println(Sqrt(16))
 }
-
-
-
+```
